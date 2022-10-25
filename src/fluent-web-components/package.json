@@ -1,0 +1,14 @@
+{
+  "name": "fluent-web-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@fluentui/web-components": "^2.5.6"
+  }
+}

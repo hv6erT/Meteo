@@ -1,0 +1,16 @@
+{
+  "img/europe/florian-wehde-1uWanmgkd5g-unsplash.jpg": {
+    "attr": "Photo by Florian Wehde on Unsplash",
+    "city": "Berlin",
+    "region": "Europe"
+  },
+  "img/europe/alexander-kagan-t9Td0zfDTwI-unsplash.jpg": {
+    "city": "Paris",
+    "region": "Europe"
+  },
+  "img/europe/iwona-castiello-d-antonio-KWcQ6_dk_OM-unsplash.jpg": {
+    "info": "The Palace of culture and science",
+    "city": "Warsaw",
+    "region": "Europe"
+  }
+}

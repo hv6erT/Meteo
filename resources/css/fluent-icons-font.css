@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "fluent-icons-font";
+  src: url('../fonts/fluent-ui/fluent-icons-font.eot?t=1666724690168'); /* IE9*/
+  src: url('../fonts/fluent-ui/fluent-icons-font.eot?t=1666724690168#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url("../fonts/fluent-ui/fluent-icons-font.woff2?t=1666724690168") format("woff2"),
+  url("../fonts/fluent-ui/fluent-icons-font.woff?t=1666724690168") format("woff"),
+  url('../fonts/fluent-ui/fluent-icons-font.ttf?t=1666724690168') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/fluent-ui/fluent-icons-font.svg?t=1666724690168#fluent-icons-font') format('svg'); /* iOS 4.1- */
+}
+
+[class^="fluent-icons-"], [class*=" fluent-icons-"] {
+  font-family: 'fluent-icons-font' !important;
+  font-size:18px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.fluent-icons-Info:before { content: "\ea01"; }

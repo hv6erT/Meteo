@@ -1,0 +1,93 @@
+:root{
+  --font-lg: 40px;
+  --font-md: 25px;
+  --font-sm: 15px;
+}
+#app-container{
+  width: 100vw;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  #app-container{
+    height: 100vh;
+  }
+}
+/*.timer*/
+.timer{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  mix-blend-mode: color-burn;
+}
+.timer .time-container{
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+.timer .time{
+  font-size: var(--font-lg);
+}
+.timer .daytime{
+  font-size: var(--font-md);
+}
+.timer .date{
+  font-size: var(--font-sm);
+}
+/*.geolocator*/
+.geolocator .geolocation-container{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  mix-blend-mode: color-burn;
+}
+@media (min-width: 768px) {
+  .geolocator .geolocation-container{
+    text-align: right;
+  }
+}
+.geolocator .coords-container{
+  display: flex;
+  gap: 5px;
+  font-size: var(--font-lg);
+}
+.geolocator .latitude, .geolocator .longitude{
+  display: flex;
+  gap: 5px;
+  align-items: baseline;
+}
+.geolocator .latitude-letter, .geolocator .longitude-letter{
+  font-size: var(--font-md);
+}
+.geolocator .city{
+  font-size: var(--font-lg);
+}
+.geolocator .region{
+  font-size: var(--font-sm);
+}
+/*.weather-background*/
+.weather-background{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+}
+.weather-background .background{
+  background-position: center;
+  background-size: cover;
+}
+.weather-background .info-container{
+  height: 50px;
+  padding: 5px;
+  position: relative;
+  top: calc(100% - 50px);
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-end;
+}
+@media (min-width: 768px) {
+  .weather-background{
+    height: 65vh;
+    position: static;
+  }
+}
