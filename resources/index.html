@@ -3,8 +3,12 @@
   <head>
     <title>Meteo - open weather forecast</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf8">
+    <meta name="description" content="Best weather forecast">
+    <meta name="keywords" content="Weather, Meteo, Forecast, Weathercast, Tomorrow, Today">
+    <meta name="author" content="Hubert Rączkiewicz">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.41/vue.global.min.js" integrity="sha512-lgbnN1gNswbc8DPmFF2F9n951EGPK0p9PmPkzECHyjC4bmv6Be6ezWQB7mIjPJ5pAdYehSj+Nm0brW0NjCoFmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.41/vue.global.min.js" integrity="sha512-lgbnN1gNswbc8DPmFF2F9n951EGPK0p9PmPkzECHyjC4bmv6Be6ezWQB7mIjPJ5pAdYehSj+Nm0brW0NjCoFmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="./js/global.js"></script>
     <script defer type="module" src="./js/app.js"></script>
 
@@ -18,12 +22,51 @@
   <body>
     <div id="app">
       <loader>
-        <weather-background>
-          <nav>
-            <timer></timer>
-            <geolocator></geolocator>
-          </nav>
-        </weather-background>
+        <main>
+          <article>
+            <nav style="justify-content: space-between;">
+              <timer></timer>
+              <div>
+                <fluent-switch :checked="((getColorMode()==='dark')? true : false)" @change="setColorModeByDOMEvent" >
+                  <span slot="checked-message">
+                    <span class="fluent-icons-WeatherMoon" style="padding: 2.5px 0;"></span>
+                  </span>
+                  <span slot="unchecked-message">
+                    <span class="fluent-icons-WeatherSunny" style="padding: 2.5px 0;"></span>
+                  </span>
+                  <label for="direction-switch"></label>
+                </fluent-switch>
+              </div>
+            </nav>
+            <section>
+              <header>Week forecast</header>
+              <forecast width="100px" height="130px"></forecast>
+              <header>Weather data</header>
+              <section class="weather-data">
+                <widget type="apparent-temperature" width="150px" height="120px"></widget>
+                <widget type="pressure" width="150px" height="120px"></widget>
+                <widget type="wind" width="320px" height="120px"></widget>
+                <widget type="dewpoint" width="150px" height="120px"></widget>
+                <widget type="cloudcover" width="150px" height="120px"></widget>
+                <widget type="humidity" width="150px" height="120px"></widget>
+                <widget type="precipitations" width="210px" height="120px"></widget>
+                <widget type="sunrise" width="250px" height="120px"></widget>
+              </section>
+            </section>
+          </article>
+          <aside>
+            <nav style="justify-content: center;">
+              <geosearcher></geosearcher>
+            </nav>
+            <section style="justify-content: center;">
+              <weather width="calc(var(--aside-width) * 0.75)"></weather>
+              <section style="flex-direction: column; justify-content: flex-start;">
+                <header>Forecast hourly</header>
+                <day-forecast width="calc(var(--aside-width) * 0.75)" height="40px"></day-forecast>
+              </section>
+            </section>
+          </aside>
+        </main>
       </loader>
     </div>
   </body>

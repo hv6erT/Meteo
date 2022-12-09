@@ -1,0 +1,2 @@
+cd ..\resources
+http-server

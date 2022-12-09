@@ -1,10 +1,10 @@
 @font-face {font-family: "fluent-icons-font";
-  src: url('../fonts/fluent-ui/fluent-icons-font.eot?t=1666724690168'); /* IE9*/
-  src: url('../fonts/fluent-ui/fluent-icons-font.eot?t=1666724690168#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url("../fonts/fluent-ui/fluent-icons-font.woff2?t=1666724690168") format("woff2"),
-  url("../fonts/fluent-ui/fluent-icons-font.woff?t=1666724690168") format("woff"),
-  url('../fonts/fluent-ui/fluent-icons-font.ttf?t=1666724690168') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('../fonts/fluent-ui/fluent-icons-font.svg?t=1666724690168#fluent-icons-font') format('svg'); /* iOS 4.1- */
+  src: url('../fonts/fluent-ui/fluent-icons-font.eot?t=1668970054582'); /* IE9*/
+  src: url('../fonts/fluent-ui/fluent-icons-font.eot?t=1668970054582#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url("../fonts/fluent-ui/fluent-icons-font.woff2?t=1668970054582") format("woff2"),
+  url("../fonts/fluent-ui/fluent-icons-font.woff?t=1668970054582") format("woff"),
+  url('../fonts/fluent-ui/fluent-icons-font.ttf?t=1668970054582') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/fluent-ui/fluent-icons-font.svg?t=1668970054582#fluent-icons-font') format('svg'); /* iOS 4.1- */
 }
 
 [class^="fluent-icons-"], [class*=" fluent-icons-"] {
@@ -15,7 +15,41 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.fluent-icons-Info:before { content: "\ea01"; }
+.fluent-icons-ArrowCounterclockwise:before { content: "\ea01"; }
+.fluent-icons-ArrowSync:before { content: "\ea02"; }
+.fluent-icons-Cloud:before { content: "\ea03"; }
+.fluent-icons-CompassNorthwest:before { content: "\ea04"; }
+.fluent-icons-Drop:before { content: "\ea05"; }
+.fluent-icons-Info:before { content: "\ea06"; }
+.fluent-icons-Location:before { content: "\ea07"; }
+.fluent-icons-Temperature:before { content: "\ea08"; }
+.fluent-icons-TopSpeed:before { content: "\ea09"; }
+.fluent-icons-WeatherBlowingSnow:before { content: "\ea0a"; }
+.fluent-icons-WeatherCloudy:before { content: "\ea0b"; }
+.fluent-icons-WeatherFog:before { content: "\ea0c"; }
+.fluent-icons-WeatherHaze:before { content: "\ea0d"; }
+.fluent-icons-WeatherMoon:before { content: "\ea0e"; }
+.fluent-icons-WeatherRain:before { content: "\ea0f"; }
+.fluent-icons-WeatherSnowflake:before { content: "\ea10"; }
+.fluent-icons-WeatherSqualls:before { content: "\ea11"; }
+.fluent-icons-WeatherSunny:before { content: "\ea12"; }
 
-$fluent-icons-Info: "\ea01";
+$fluent-icons-ArrowCounterclockwise: "\ea01";
+$fluent-icons-ArrowSync: "\ea02";
+$fluent-icons-Cloud: "\ea03";
+$fluent-icons-CompassNorthwest: "\ea04";
+$fluent-icons-Drop: "\ea05";
+$fluent-icons-Info: "\ea06";
+$fluent-icons-Location: "\ea07";
+$fluent-icons-Temperature: "\ea08";
+$fluent-icons-TopSpeed: "\ea09";
+$fluent-icons-WeatherBlowingSnow: "\ea0a";
+$fluent-icons-WeatherCloudy: "\ea0b";
+$fluent-icons-WeatherFog: "\ea0c";
+$fluent-icons-WeatherHaze: "\ea0d";
+$fluent-icons-WeatherMoon: "\ea0e";
+$fluent-icons-WeatherRain: "\ea0f";
+$fluent-icons-WeatherSnowflake: "\ea10";
+$fluent-icons-WeatherSqualls: "\ea11";
+$fluent-icons-WeatherSunny: "\ea12";
 

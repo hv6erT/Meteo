@@ -1,6 +1,13 @@
 window.UserInfo = class{
+  static #geolocation = null;
   static geolocation = null;
+  static date = null;
   static async setGeolocationByGeoAPI(){
+    if(UserInfo.#geolocation !== null){
+      UserInfo.geolocation = UserInfo.#geolocation;
+      return;
+    }
+    
     UserInfo.geolocation = {};
     
     if ('geolocation' in navigator) {     
@@ -24,9 +31,15 @@ window.UserInfo = class{
     
     if(Object.keys(UserInfo.geolocation).length === 0)
       UserInfo.geolocation = null;
+    else
+      UserInfo.#geolocation = UserInfo.geolocation;
   }
   static async setCustomGeolocationByCityName(cityName){
     
+  }
+  static setDate(date){
+    if(date instanceof Date)
+      UserInfo.date = date;
   }
 }
 
@@ -36,7 +49,7 @@ window.WeatherInfo = class{
     if(!geolocation)
         throw new Error("Geolocation param is required");
     
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${geolocation.latitude}&longitude=${geolocation.longitude}&hourly=temperature_2m,rain,weathercode,windspeed_10m&daily=weathercode,temperature_2m_min,rain_sum&current_weather=true&timezone=auto`;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${geolocation.latitude}&longitude=${geolocation.longitude}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,snowfall,rain,weathercode,surface_pressure,dewpoint_2m,cloudcover&daily=weathercode,temperature_2m_max,rain_sum,snowfall_sum,windspeed_10m_max,windgusts_10m_max,winddirection_10m_dominant,precipitation_sum,sunrise,sunset&current_weather=true&timezone=auto&past_days=2`;
 
     const response = await fetch(url);
 
@@ -45,6 +58,5 @@ window.WeatherInfo = class{
     }
     else
       console.error(response.status);
-    
   }
 }

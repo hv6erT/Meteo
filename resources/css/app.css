@@ -1,93 +1,253 @@
-:root{
-  --font-lg: 40px;
-  --font-md: 25px;
-  --font-sm: 15px;
-}
-#app-container{
-  width: 100vw;
-  height: 100%;
+#app{
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--neutral-layer-1);
+  scrollbar-gutter: stable;
 }
 @media (min-width: 768px) {
-  #app-container{
+  #app{
     height: 100vh;
   }
 }
+/*loader*/
+.loader .loader-container{
+  width: 100%;
+  height: 100vh;
+}
 /*.timer*/
-.timer{
+.timer .timer-container{
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  mix-blend-mode: color-burn;
+  gap: 2.5px;
 }
-.timer .time-container{
+.theme-light .timer-container{
+  color: var(--accent-stroke-control-active);
+}
+.theme-dark .timer-container{
+  color: var(--neutral-foreground-focus);
+}
+.timer .clock-container{
   display: flex;
   align-items: baseline;
-  gap: 5px;
-}
-.timer .time{
+  gap: 10px;
   font-size: var(--font-lg);
+  font-weight: 500;
+  text-align: center;
 }
-.timer .daytime{
-  font-size: var(--font-md);
-}
-.timer .date{
+.timer .date-container{
   font-size: var(--font-sm);
-}
-/*.geolocator*/
-.geolocator .geolocation-container{
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  mix-blend-mode: color-burn;
+  text-align: center;
 }
 @media (min-width: 768px) {
-  .geolocator .geolocation-container{
-    text-align: right;
+  .timer .clock-container{
+    text-align: left;
+  }
+  .timer .date-container{
+    text-align: left;
   }
 }
-.geolocator .coords-container{
+/*.geosearcher*/
+.geosearcher{
+  padding: 0 20px;
+}
+.geosearcher .geosearcher-container{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--neutral-foreground-focus);
+}
+.geosearcher .label-container{
   display: flex;
   gap: 5px;
-  font-size: var(--font-lg);
-}
-.geolocator .latitude, .geolocator .longitude{
-  display: flex;
-  gap: 5px;
-  align-items: baseline;
-}
-.geolocator .latitude-letter, .geolocator .longitude-letter{
-  font-size: var(--font-md);
-}
-.geolocator .city{
-  font-size: var(--font-lg);
-}
-.geolocator .region{
-  font-size: var(--font-sm);
-}
-/*.weather-background*/
-.weather-background{
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-}
-.weather-background .background{
-  background-position: center;
-  background-size: cover;
-}
-.weather-background .info-container{
-  height: 50px;
-  padding: 5px;
-  position: relative;
-  top: calc(100% - 50px);
-  display: flex;
-  gap: 5px;
+  justify-content: center;
   align-items: center;
+  font-size: var(--font-sm);
+  text-align: center;
+}
+/*weather*/
+.weather fluent-card{
+  padding: 20px 10px;
+  background: var(--accent-stroke-control-active);
+  color: var(--fill-color);
+  border-radius: 15px;
+}
+.weather fluent-skeleton{
+  border-radius: 15px;
+}
+.weather .weather-wrapper{
+  gap: 5px;
+}
+.weather .weather-top-bar{
+  width: 100%;
+  height: 20px;
+  margin-bottom: -20px;
+  display: flex;
   justify-content: flex-end;
 }
-@media (min-width: 768px) {
-  .weather-background{
-    height: 65vh;
-    position: static;
+.weather .weather-img{
+  width: 150px;
+  height: 150px;
+  margin: -15px 0;
+}
+.weather .day{
+  font-size: var(--font-sm);
+  font-weight: 600;
+}
+.weather .temperature{
+  font-size: var(--font-xl);
+  font-weight: 600;
+}
+.weather .weather-text{
+  font-size: var(--font-n); 
+  font-weight: 600;
+}
+.weather .weather-info{
+  padding: 2.5px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+}
+.weather .weather-reload-button{
+  margin-top: -10px;
+}
+/*widget*/
+.widget fluent-card{
+  padding: 20px 10px;
+  background-color: var(--neutral-layer-floating);
+  color: var(--neutral-foreground-focus);
+  border-radius: 15px;
+}
+.widget fluent-skeleton{
+  border-radius: 15px;
+}
+.widget .widget-wrapper{
+  display: flex;
+  justify-content: space-around;
+}
+.widget .sunrise, .widget .sunset, .widget .rain, .widget .snow, .widget .apparent-temperature, .widget .wind-speed, .widget .wind-gusts, .widget .wind-direction, .widget .surface-pressure, .widget .dewpoint, .widget .cloudcover, .widget .humidity{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+.widget .icon{
+  font-size: 32px;
+  color: var(--accent-stroke-control-active);
+}
+.widget .widget-content{
+  display: flex;
+  flex-direction: column;
+}
+.widget .widget-text{
+  color: var(--neutral-fill-strong-hover);
+  font-size: 13px;
+}
+/*forecast*/
+.forecast{
+  width: 100%;
+}
+.forecast .forecast-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.forecast .forecast-wrapper{
+  width: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.forecast-wrapper::-webkit-scrollbar { 
+  display: none;
+}
+.forecast-content-wrapper{
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+@media (max-width: 767px) {
+  .forecast .flipper{
+    display: none;
   }
+}
+@media (min-width: 1366px) {
+  .forecast .flipper{
+    display: none;
+  }
+  .forecast .forecast-content-wrapper{
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+}
+.forecast fluent-card{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: none;
+  cursor: pointer;
+}
+.forecast fluent-card.active-forecast{
+  background: var(--accent-stroke-control-active);
+  color: var(--fill-color);
+}
+fluent-card.active-forecast *{
+  color: var(--fill-color) !important;
+}
+@media (max-width: 767px) {
+  .forecast fluent-card.past-forecast{
+    display: none;
+  }
+}
+.forecast fluent-skeleton{
+  border-radius: 15px;
+}
+.forecast .weather-img{
+  margin-top: -10px;
+  margin-bottom: -5px;
+}
+.forecast .day{
+  color: var(--neutral-fill-strong-hover);
+  font-size: 13px;
+}
+.forecast .temperature{
+  color: var(--neutral-foreground-focus);
+}
+/*day-forecast*/
+.day-forecast{
+  overflow: hidden;
+}
+.day-forecast .day-forecast-wrapper{
+  height: calc(100vh - 520px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.day-forecast .day-forecast-content-wrapper{
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.day-forecast fluent-card.active-forecast{
+  background: var(--accent-stroke-control-active);
+  color: var(--fill-color);
+}
+.day-forecast fluent-card{
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+}
+.day-forecast fluent-skeleton{
+  border-radius: 15px;
+}
+.day-forecast .weather-img{
+  width: 35px;
+  height: 35px;
 }
